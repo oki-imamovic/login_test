@@ -1,0 +1,18 @@
+TITLE: As New user ISBAT log in into the app and validate that I do not have any data in the table
+
+Description:
+As a new user I want to log in for the first time into the app and validate that I have an empty table of Contacts
+NOTE: use endpoint https://thinking-tester-contact-list.herokuapp.com/users to create new user
+
+Test Steps:
+GIVEN I navigate to page "https://thinking-tester-contact-list.herokuapp.com/"
+THEN I see the log in page
+AND I input my new user email
+AND I input my new user password
+AND I click on log in button
+THEN I see that the app has opened and I validate that table has no records
+
+
+My Comment:
+Reason why this is a smoke test:
+We are just validating the core functionality that the log in works and that the table is empty for a new user

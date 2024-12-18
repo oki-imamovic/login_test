@@ -1,0 +1,16 @@
+TITLE: As existing user ISBAT log in into the app and validate my existing data
+
+Description:
+As existing user I should be able to log in into User contacts list app and validate that my existing contacts are present in the table
+Test Steps:
+GIVEN I navigate to page "https://thinking-tester-contact-list.herokuapp.com/"
+THEN I see the log in page
+AND I input my existing user email
+AND I input my existing user password
+AND I click on log in button
+THEN I validate that one of my contacts created is still present in the table (first name, last name, phone number, email, DOB, address, city and country)
+
+
+My Comment:
+Reason why this is a smoke test:
+We are just validating the core functionality that the existing user can log in and validate his expected results on the table
