@@ -9,6 +9,8 @@ AND I input my existing user email
 AND I input my existing user password
 AND I click on log in button
 THEN I validate that one of my contacts created is still present in the table (first name, last name, phone number, email, DOB, address, city and country)
+AND I log out
+THEN I validate that I am back on log in page
 
 
 My Comment:
