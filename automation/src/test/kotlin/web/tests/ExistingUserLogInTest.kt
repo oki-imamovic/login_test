@@ -1,5 +1,6 @@
 package web.tests
 
+import org.testng.Assert.assertEquals
 import org.testng.Assert.assertTrue
 import org.testng.annotations.BeforeClass
 import org.testng.annotations.Test
@@ -28,10 +29,9 @@ class ExistingUserLogInTest: TestBase(){
 
         contactListLoginPage.logInWithExistingUser()
         val contactListHomePage = contactListHomePage
-        assertTrue(contactListHomePage.isLogOutButtonDisplayed)
-        assertTrue(contactListHomePage.isNamePresentInTableList("Hasim Turcin"))
-        assertTrue(contactListHomePage.isTableNameListEmpty)
+        assertTrue(contactListHomePage.isLogOutButtonDisplayed, "ERROR: User Did not log in")
+        assertEquals(contactListHomePage.isNamePresentInTableList, "TestD231 $423", "ERROR: Expected Unique Name not present in the list")
         contactListHomePage.clickOnLogOutButton()
-        assertTrue(contactListLoginPage.isSubmitButtonDisplayed)
+        assertTrue(contactListLoginPage.isSignUpButtonDisplayed, "ERROR: USER did not log out")
     }
 }

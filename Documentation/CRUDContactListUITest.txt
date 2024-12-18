@@ -1,0 +1,30 @@
+TITLE: As new User ISBAT to preform CRUD operation on Contact List Table
+
+Description:
+As new user I should be able to preform CRUD operation on creating, editing, deleting Contact List
+Test Steps:
+GIVEN I navigate to page "https://thinking-tester-contact-list.herokuapp.com/"
+THEN I see the log in page
+AND I click on Sign Up Button
+AND I input unique first name, last name, email & password
+AND I click on submit button
+THEN I am logged in with the new user
+AND I click on create new contact
+AND I input all input fields (names, dob, email, phone etc...)
+AND I click on Submit button
+AND I am navigated to home page with the Contact list table
+THEN I validate all the fields that I touch in the table for the same records
+AND I click on the name of the Contact I created
+AND i click on Edit button
+AND I change names of the contact
+AND I click on Submit button
+AND I navigate back to the Home Page
+THEN i validate that the last and first name are updated on the contact
+AND I click on the name of the contact
+AND i click on Delete button
+THEN I am navigated to the home page
+AND i click on create new contact button
+AND I only input first and last name
+AND i click on Submit button
+AND I am navigated to the home page
+THEN I validate that deleted element is not in the list, but the new one is

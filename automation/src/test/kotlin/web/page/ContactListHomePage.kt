@@ -6,7 +6,6 @@ import org.openqa.selenium.support.FindBy
 import org.openqa.selenium.support.PageFactory
 import org.openqa.selenium.support.ui.ExpectedConditions
 import org.openqa.selenium.support.ui.WebDriverWait
-import web.helperClass.HelperClassFunctions
 import java.time.Duration
 
 class ContactListHomePage(driver: WebDriver) {
@@ -17,13 +16,39 @@ class ContactListHomePage(driver: WebDriver) {
 
     private val wait = WebDriverWait(driver, Duration.ofSeconds(30))
 
-    private val helperClassFunctions = HelperClassFunctions()
-
     @FindBy(id = "logout")
     private val logoutButton: WebElement? = null
 
+    @FindBy(id = "add-contact")
+    private val addContact: WebElement? = null
+
     @FindBy(xpath = "//tr[@class=\"contactTableBodyRow\"]/td[2]")
-    private val tableNameList: List<WebElement>? = null
+    private val tableName: WebElement? = null
+
+    @FindBy(xpath = "//tr[@class=\"contactTableBodyRow\"]/td[3]")
+    private val tableDOB: WebElement? = null
+
+    @FindBy(xpath = "//tr[@class=\"contactTableBodyRow\"]/td[4]")
+    private val tableEmail: WebElement? = null
+
+    @FindBy(xpath = "//tr[@class=\"contactTableBodyRow\"]/td[5]")
+    private val tablePhone: WebElement? = null
+
+    @FindBy(xpath = "//tr[@class=\"contactTableBodyRow\"]/td[6]")
+    private val tableAddress: WebElement? = null
+
+    @FindBy(xpath = "//tr[@class=\"contactTableBodyRow\"]/td[7]")
+    private val tableCity: WebElement? = null
+
+    @FindBy(xpath = "//tr[@class=\"contactTableBodyRow\"]/td[8]")
+    private val tableCountry: WebElement? = null
+
+    val getTableDOBText: String get() = tableDOB!!.text
+    val getTableEmailText: String get() = tableEmail!!.text
+    val getTPhoneText: String get() = tablePhone!!.text
+    val getTAddressText: String get() = tableAddress!!.text
+    val getTCityText: String get() = tableCity!!.text
+    val getTCountryText: String get() = tableCountry!!.text
 
     val isLogOutButtonDisplayed: Boolean
         get() {
@@ -31,19 +56,24 @@ class ContactListHomePage(driver: WebDriver) {
             return logoutButton!!.isDisplayed
         }
 
-    val isTableNameListEmpty: Boolean
+    val isNamePresentInTableList: String
         get() {
-            wait.until(ExpectedConditions.visibilityOfAllElements(tableNameList))
-            return helperClassFunctions.isListEmpty(tableNameList)
-        }
+        wait.until(ExpectedConditions.visibilityOf(tableName))
+        return tableName!!.text
+    }
 
-    fun isNamePresentInTableList(name: String): Boolean {
-        wait.until(ExpectedConditions.visibilityOfAllElements(tableNameList))
-        return helperClassFunctions.isElementIncluded(name, tableNameList)
+    fun clickOnTableName() {
+        wait.until(ExpectedConditions.visibilityOf(tableName))
+        tableName!!.click()
     }
 
     fun clickOnLogOutButton() {
-        wait.until(ExpectedConditions.elementToBeClickable(logoutButton))
+        wait.until(ExpectedConditions.visibilityOf(logoutButton))
         logoutButton!!.click()
+    }
+
+    fun clickOnAddContacts() {
+        wait.until(ExpectedConditions.visibilityOf(addContact))
+        addContact!!.click()
     }
 }

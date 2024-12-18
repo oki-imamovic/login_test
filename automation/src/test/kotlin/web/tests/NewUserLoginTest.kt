@@ -2,7 +2,8 @@ package web.tests
 
 import api.controller.UserController
 import api.dataobject.UserRequestBody
-import org.testng.Assert.*
+import org.testng.Assert.assertNotNull
+import org.testng.Assert.assertTrue
 import org.testng.annotations.BeforeClass
 import org.testng.annotations.Test
 import web.TestBase
@@ -15,8 +16,10 @@ class NewUserLoginTest: TestBase() {
     private lateinit var contactListLoginPage: ContactListLoginPage
     private lateinit var contactListHomePage: ContactListHomePage
     private lateinit var helperClassFunctions: HelperClassFunctions
-    private val password = "Test123!"
+    private lateinit var firstName: String
+    private lateinit var lastName: String
     private lateinit var email: String
+    private lateinit var password: String
 
     @BeforeClass
     fun initPageObjects() {
@@ -28,16 +31,19 @@ class NewUserLoginTest: TestBase() {
     @Test
     fun newUserLoginTest() {
         driver.get(helperClassFunctions.baseURL)
+        firstName = helperClassFunctions.generateUserName()
+        lastName = helperClassFunctions.generateUserName()
         email = helperClassFunctions.generateTestEmail()
+        password = helperClassFunctions.generateTestPassword()
         val userController = UserController()
         val userRequestBody = UserRequestBody(
-            firstName = "Test",
-            lastName = "User",
+            firstName = firstName,
+            lastName = lastName,
             email = email,
             password = password
         )
         val response = userController.createUser(userRequestBody)
-        assertNotNull(response, "User creation failed!")
+        assertNotNull(response, "ERROR: User creation failed!")
 
         val contactListLoginPage = contactListLoginPage
         contactListLoginPage.fillEmailField(email)
@@ -46,6 +52,6 @@ class NewUserLoginTest: TestBase() {
         val contactListHomePage = contactListHomePage
         assertTrue(contactListHomePage.isLogOutButtonDisplayed)
         contactListHomePage.clickOnLogOutButton()
-        assertTrue(contactListLoginPage.isSubmitButtonDisplayed)
+        assertTrue(contactListLoginPage.isSignUpButtonDisplayed)
     }
 }

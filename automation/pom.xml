@@ -48,7 +48,6 @@
 
   <build>
     <plugins>
-      <!-- Kotlin Plugin -->
       <plugin>
         <groupId>org.jetbrains.kotlin</groupId>
         <artifactId>kotlin-maven-plugin</artifactId>

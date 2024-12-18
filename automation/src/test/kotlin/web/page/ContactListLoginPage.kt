@@ -28,10 +28,13 @@ class ContactListLoginPage(driver: WebDriver) {
     @FindBy(id = "submit")
     private val submitButton: WebElement? = null
 
-    val isSubmitButtonDisplayed: Boolean
+    @FindBy(id = "signup")
+    private val signUpButton: WebElement? = null
+
+    val isSignUpButtonDisplayed: Boolean
         get() {
-            wait.until(ExpectedConditions.visibilityOf(submitButton))
-            return submitButton!!.isDisplayed
+            wait.until(ExpectedConditions.visibilityOf(signUpButton))
+            return signUpButton!!.isDisplayed
         }
 
     fun logInWithExistingUser() {
@@ -43,6 +46,11 @@ class ContactListLoginPage(driver: WebDriver) {
     fun clickOnSubmitButton() {
         wait.until(ExpectedConditions.visibilityOf(submitButton))
         submitButton!!.click()
+    }
+
+    fun clickOnSignUpButton() {
+        wait.until(ExpectedConditions.visibilityOf(signUpButton))
+        signUpButton!!.click()
     }
 
     fun fillEmailField(email: String) {

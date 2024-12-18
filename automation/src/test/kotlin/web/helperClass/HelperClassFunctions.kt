@@ -1,36 +1,43 @@
 package web.helperClass
 
-import org.openqa.selenium.WebElement
 import kotlin.random.Random
 
 class HelperClassFunctions {
 
-    private val ALPHA_NUMERIC = ('0'..'9') + ('A'..'Z') + ('a'..'z')
+    private val alphaNum = ('0'..'9') + ('A'..'Z') + ('a'..'z')
     val email = "testuser11111@gmail.com"
     val password = "Test123"
     val baseURL = "https://thinking-tester-contact-list.herokuapp.com/"
 
-    fun isListEmpty(list: List<WebElement>?): Boolean {
-        return list!!.isNotEmpty()
+    private fun generateRandomNumbers(): String {
+        val digits = ('0'..'9')
+        return (1..6)
+            .map { digits.random() }
+            .joinToString("")
     }
 
-    private fun generateId(): String {
-        return List(3) { Random.nextInt(0, ALPHA_NUMERIC.size) }
-            .map { ALPHA_NUMERIC[it] }
+    private fun generateId(size: Int): String {
+        return List(size) { Random.nextInt(0, alphaNum.size) }
+            .map { alphaNum[it] }
             .joinToString(separator = "")
     }
 
     fun generateTestEmail(): String {
-       val randomHex = generateId()
+       val randomHex = generateId(3)
         return "email$randomHex@test.com".lowercase()
     }
 
-    fun isElementIncluded(element: String, listOfElements: List<WebElement>?): Boolean {
-        for (webElement in listOfElements!!) {
-            if (webElement.text.contains(element)) {
-                return true
-            }
-        }
-        return false
+    fun generateTestPassword(): String {
+        val randomHex = generateId(5)
+        return "Code$randomHex"
+    }
+
+    fun generateUserName(): String {
+        val randomHex = generateId(6)
+        return randomHex
+    }
+
+    fun generatePhoneNumber(): String {
+        return "062${generateRandomNumbers()}"
     }
 }
