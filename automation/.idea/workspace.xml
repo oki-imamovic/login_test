@@ -5,19 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="028c7785-4a6a-4223-88e1-700f4b1c93a0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/api/tests/CRUDContactListAPITest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/api/tests/CRUDContactUserAPITest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/web/page/AddContactPage.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/web/page/ContactDetailsPage.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/web/page/UserSignUpPage.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/web/tests/CRUDContactListUITest.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/web/helperClass/HelperClassFunctions.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/web/helperClass/HelperClassFunctions.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/web/page/ContactListHomePage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/web/page/ContactListHomePage.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/web/page/ContactListLoginPage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/web/page/ContactListLoginPage.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/web/tests/ExistingUserLogInTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/web/tests/ExistingUserLogInTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/web/tests/NewUserLoginTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/web/tests/NewUserLoginTest.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,33 +23,33 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2qOQy5CR83sB7rnYdNfZkrZPoby" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "TestNG.CRUDContactListUITest.executor": "Run",
-    "TestNG.ExistingUserLogInTest.executor": "Run",
-    "TestNG.NewUserLoginTest.executor": "Run",
-    "TestNG.SeleniumTest.executor": "Run",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Ohran/Documents/GitProjects/login_test/automation/src/test/kotlin/chromedriver",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;TestNG.CRUDContactListUITest.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.ExistingUserLogInTest.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.NewUserLoginTest.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.SeleniumTest.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Ohran/Documents/GitProjects/login_test/automation/src/test/kotlin/chromedriver&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Ohran\Documents\GitProjects\login_test\automation\src\test\kotlin\chromedriver" />
