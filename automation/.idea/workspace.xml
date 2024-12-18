@@ -5,14 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="028c7785-4a6a-4223-88e1-700f4b1c93a0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/web/BaseTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/web/helperClass/HelperClassFunctions.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/web/page/ContactListHomePage.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/web/page/ContactListLoginPage.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/web/tests/ExistingUserLogInTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/api/controller/ContactListController.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/api/dataobject/CreateUserResponse.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/api/dataobject/User.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/api/dataobject/UserRequestBody.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/web/tests/NewUserLoginTest.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/tests/SeleniumTest.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/testng.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/web/helperClass/HelperClassFunctions.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/web/helperClass/HelperClassFunctions.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/web/page/ContactListLoginPage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/web/page/ContactListLoginPage.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/web/tests/ExistingUserLogInTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/web/tests/ExistingUserLogInTest.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +24,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Kotlin Data Class" />
         <option value="Kotlin Class" />
       </list>
     </option>
@@ -45,6 +48,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "TestNG.ExistingUserLogInTest.executor": "Run",
+    "TestNG.NewUserLoginTest.executor": "Run",
     "TestNG.SeleniumTest.executor": "Run",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
@@ -59,7 +63,7 @@
       <recent name="C:\Users\Ohran\Documents\GitProjects\login_test\automation\src\test\kotlin\chromedriver" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="TestNG.ExistingUserLogInTest">
     <configuration name="ExistingUserLogInTest" type="TestNG" nameIsGenerated="true">
       <module name="automation" />
       <shortenClasspath name="NONE" />
@@ -87,6 +91,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="NewUserLoginTest" type="TestNG" nameIsGenerated="true">
+      <module name="automation" />
+      <shortenClasspath name="NONE" />
+      <useClassPathOnly />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="web.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SUITE_NAME" value="" />
+      <option name="PACKAGE_NAME" value="web.tests" />
+      <option name="MAIN_CLASS_NAME" value="web.tests.NewUserLoginTest" />
+      <option name="GROUP_NAME" value="" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="PROPERTIES_FILE" value="" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -98,5 +129,16 @@
       <updated>1734531393223</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

@@ -1,6 +1,8 @@
 package web.tests
 
-import org.testng.Assert.assertTrue
+import api.controller.UserController
+import api.dataobject.UserRequestBody
+import org.testng.Assert.*
 import org.testng.annotations.BeforeClass
 import org.testng.annotations.Test
 import web.TestBase
@@ -8,11 +10,13 @@ import web.helperClass.HelperClassFunctions
 import web.page.ContactListHomePage
 import web.page.ContactListLoginPage
 
-class ExistingUserLogInTest: TestBase(){
+class NewUserLoginTest: TestBase() {
 
     private lateinit var contactListLoginPage: ContactListLoginPage
     private lateinit var contactListHomePage: ContactListHomePage
     private lateinit var helperClassFunctions: HelperClassFunctions
+    private val password = "Test123!"
+    private lateinit var email: String
 
     @BeforeClass
     fun initPageObjects() {
@@ -22,15 +26,25 @@ class ExistingUserLogInTest: TestBase(){
     }
 
     @Test
-    fun existingUserLogInTest() {
+    fun newUserLoginTest() {
         driver.get(helperClassFunctions.baseURL)
-        val contactListLoginPage = contactListLoginPage
+        email = helperClassFunctions.generateTestEmail()
+        val userController = UserController()
+        val userRequestBody = UserRequestBody(
+            firstName = "Test",
+            lastName = "User",
+            email = email,
+            password = password
+        )
+        val response = userController.createUser(userRequestBody)
+        assertNotNull(response, "User creation failed!")
 
-        contactListLoginPage.logInWithExistingUser()
+        val contactListLoginPage = contactListLoginPage
+        contactListLoginPage.fillEmailField(email)
+        contactListLoginPage.fillPasswordField(password)
+        contactListLoginPage.clickOnSubmitButton()
         val contactListHomePage = contactListHomePage
         assertTrue(contactListHomePage.isLogOutButtonDisplayed)
-        assertTrue(contactListHomePage.isNamePresentInTableList("Hasim Turcin"))
-        assertTrue(contactListHomePage.isTableNameListEmpty)
         contactListHomePage.clickOnLogOutButton()
         assertTrue(contactListLoginPage.isSubmitButtonDisplayed)
     }

@@ -40,18 +40,18 @@ class ContactListLoginPage(driver: WebDriver) {
         clickOnSubmitButton()
     }
 
-    private fun clickOnSubmitButton() {
+    fun clickOnSubmitButton() {
         wait.until(ExpectedConditions.visibilityOf(submitButton))
         submitButton!!.click()
     }
 
-    private fun fillEmailField(email: String) {
+    fun fillEmailField(email: String) {
         wait.until(ExpectedConditions.visibilityOf(emailInputField))
         emailInputField!!.clear()
         emailInputField.sendKeys(email)
     }
 
-    private fun fillPasswordField(password: String) {
+    fun fillPasswordField(password: String) {
         wait.until(ExpectedConditions.visibilityOf(passwordInputField))
         passwordInputField!!.clear()
         passwordInputField.sendKeys(password)

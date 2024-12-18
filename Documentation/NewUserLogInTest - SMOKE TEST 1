@@ -10,7 +10,9 @@ THEN I see the log in page
 AND I input my new user email
 AND I input my new user password
 AND I click on log in button
-THEN I see that the app has opened and I validate that table has no records
+THEN I am loged into the app
+AND I click on Log out
+THEN I am navigated back to log in page
 
 
 My Comment:
