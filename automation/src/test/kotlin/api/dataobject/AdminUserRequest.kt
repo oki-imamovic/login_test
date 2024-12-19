@@ -1,6 +1,6 @@
 package api.dataobject
 
-data class UserRequestBody(
+data class AdminUserRequest(
     val firstName: String,
     val lastName: String,
     val email: String,

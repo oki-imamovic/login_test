@@ -7,7 +7,7 @@ class HelperClassFunctions {
     private val alphaNum = ('0'..'9') + ('A'..'Z') + ('a'..'z')
     val email = "testuser11111@gmail.com"
     val password = "Test123"
-    val baseURL = "https://thinking-tester-contact-list.herokuapp.com/"
+    val baseURL = "https://thinking-tester-contact-list.herokuapp.com"
 
     private fun generateRandomNumbers(): String {
         val digits = ('0'..'9')

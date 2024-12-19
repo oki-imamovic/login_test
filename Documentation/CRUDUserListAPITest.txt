@@ -1,0 +1,24 @@
+TITLE: Preforming CRUD Operation with endpoints
+
+Description:
+As a QA writing automation test case to validate create, update, delete, get endpoints end to end scenario
+
+
+Test Steps:
+GIVEN I Create a new user using POST -> /users
+AND I log in into app
+AND I log out off the app
+THEN I validate that the user was logged out
+AND I log in into the app
+AND I save token from the endpoints response as well as username & password
+THEN I execute GET -> /users/me
+NOTE: I pass the token from /users response
+AND I get information from the response and save them
+THEN I validate the information given and returned
+AND I execute PATCH -> /users/me
+AND I change first name & last name
+AND I execute GET -> /users/me
+THEN I validate that the changes have been made
+AND I log out using POST -> /users/logout
+THEN I log back in with the POST -> /user/login
+AND I delete my user using DELETE -> /users/me

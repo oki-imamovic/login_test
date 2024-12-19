@@ -1,7 +1,6 @@
 package web.tests
 
-import api.controller.UserController
-import api.dataobject.UserRequestBody
+import api.controller.AdminUserList
 import org.testng.Assert.assertNotNull
 import org.testng.Assert.assertTrue
 import org.testng.annotations.BeforeClass
@@ -11,7 +10,7 @@ import web.helperClass.HelperClassFunctions
 import web.page.ContactListHomePage
 import web.page.ContactListLoginPage
 
-class NewUserLoginTest: TestBase() {
+class NewAdminUserBodyLoginTest: TestBase() {
 
     private lateinit var contactListLoginPage: ContactListLoginPage
     private lateinit var contactListHomePage: ContactListHomePage
@@ -20,6 +19,7 @@ class NewUserLoginTest: TestBase() {
     private lateinit var lastName: String
     private lateinit var email: String
     private lateinit var password: String
+    private var token: String = "token"
 
     @BeforeClass
     fun initPageObjects() {
@@ -35,14 +35,8 @@ class NewUserLoginTest: TestBase() {
         lastName = helperClassFunctions.generateUserName()
         email = helperClassFunctions.generateTestEmail()
         password = helperClassFunctions.generateTestPassword()
-        val userController = UserController()
-        val userRequestBody = UserRequestBody(
-            firstName = firstName,
-            lastName = lastName,
-            email = email,
-            password = password
-        )
-        val response = userController.createUser(userRequestBody)
+        val adminUserList = AdminUserList()
+        val response = adminUserList.createUser(firstName, lastName, email, password)
         assertNotNull(response, "ERROR: User creation failed!")
 
         val contactListLoginPage = contactListLoginPage

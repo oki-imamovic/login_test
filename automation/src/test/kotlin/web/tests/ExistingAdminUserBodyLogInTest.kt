@@ -9,7 +9,7 @@ import web.helperClass.HelperClassFunctions
 import web.page.ContactListHomePage
 import web.page.ContactListLoginPage
 
-class ExistingUserLogInTest: TestBase(){
+class ExistingAdminUserBodyLogInTest: TestBase(){
 
     private lateinit var contactListLoginPage: ContactListLoginPage
     private lateinit var contactListHomePage: ContactListHomePage
