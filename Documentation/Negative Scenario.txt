@@ -1,0 +1,15 @@
+Negative Scenario on UI Side would look something like this:
+
+GIVEN I navigate to log in page
+AND I click on Log in
+THEN I am logged in into the app without creds
+
+GIVEN I navigate to log in page
+AND I click on Log in after I input only email
+THEN I am logged in into the app without creds
+
+GIVEN I navigate to log in page
+AND I click on Log in after I input only password
+THEN I am logged in into the app without creds
+
+Same things stand for API testing, we have to make sure that the app is answering both questions who are you? and what are you allowed to do? (Authentication & Authorization) 
