@@ -1,0 +1,28 @@
+Things needed for running the project:
+
+Java - java version "17.0.8", download link: https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html
+
+Maven: Apache Maven 3.9.9: https://www.youtube.com/watch?v=YTvlb6eny_0
+
+Intellij Community Edition - Latest Version
+
+
+NOTE: Make sure to update paths for Maven and Java
+
+After installation of all 3 components clone my project
+Open up inteliJ
+Select my Project
+Open up pom.xml file in the project
+run mvn clean install - should resolve all dependencies
+IF: You are not able to run the test case files try doin this
+File -> Project Structure -> Modules
+
+EDIT: source files to have both
+src\main\java
+src\main\kotlin
+
+Test Source Folders:
+src\test\java
+src\test\kotlin
+
+If the issue is not showing open any Test file from the 5 test cases, click on play button next to Class name

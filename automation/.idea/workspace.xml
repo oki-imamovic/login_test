@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="028c7785-4a6a-4223-88e1-700f4b1c93a0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/api/dataobject/ContactsUserBody.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Documentation/CRUDContactListAPITest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Documentation/CRUDContactListAPITest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/api/controller/ContactUserList.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/api/controller/ContactUserList.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/api/dataobject/CreateAdminUserResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/api/dataobject/CreateAdminUserResponse.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/api/tests/CRUDContactListAPITest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/api/tests/CRUDContactListAPITest.kt" afterDir="false" />
-    </list>
+    <list default="true" id="028c7785-4a6a-4223-88e1-700f4b1c93a0" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

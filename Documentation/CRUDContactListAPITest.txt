@@ -11,4 +11,4 @@ AND I patch the contact in the table
 AND I validate that it has been updated on get endpoint
 AND I update one contact with put endpoint
 THEN I delete the contact and validate that it is no longer present in the list
-AND I delete the new user after log out
+AND I delete the new user after test case finishes
