@@ -5,22 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="028c7785-4a6a-4223-88e1-700f4b1c93a0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/api/controller/ContactUserList.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/api/dataobject/LogInUserRequest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/api/tests/CRUDAdminAdminUserBodyAPITest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Documentation/CRUDContactListUITest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Documentation/CRUDContactListUITest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Documentation/CRUDUserListAPITest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Documentation/CRUDUserListAPITest.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/api/dataobject/ContactsUserBody.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Documentation/CRUDContactListAPITest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Documentation/CRUDContactListAPITest.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/api/controller/ContactListController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/api/controller/AdminUserList.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/api/dataobject/CreateUserResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/api/dataobject/CreateAdminUserResponse.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/api/dataobject/User.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/api/dataobject/AdminUserBody.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/api/dataobject/UserRequestBody.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/api/dataobject/AdminUserRequest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/api/tests/CRUDContactUserAPITest.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/web/helperClass/HelperClassFunctions.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/web/helperClass/HelperClassFunctions.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/web/tests/ExistingUserLogInTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/web/tests/ExistingAdminUserBodyLogInTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/web/tests/NewUserLoginTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/web/tests/NewAdminUserBodyLoginTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/testng.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/api/controller/ContactUserList.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/api/controller/ContactUserList.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/api/dataobject/CreateAdminUserResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/api/dataobject/CreateAdminUserResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/api/tests/CRUDContactListAPITest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/api/tests/CRUDContactListAPITest.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +44,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "TestNG.CRUDAdminAdminUserBodyAPITest.executor": "Run",
+    "TestNG.CRUDContactListAPITest.executor": "Run",
     "TestNG.CRUDContactListUITest.executor": "Run",
     "TestNG.ExistingUserLogInTest.executor": "Run",
     "TestNG.NewAdminUserBodyLoginTest.executor": "Run",
@@ -71,57 +62,6 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Ohran\Documents\GitProjects\login_test\automation\src\test\kotlin\chromedriver" />
     </key>
-  </component>
-  <component name="RunManager" selected="TestNG.CRUDAdminAdminUserBodyAPITest">
-    <configuration name="CRUDAdminAdminUserBodyAPITest" type="TestNG" nameIsGenerated="true">
-      <module name="automation" />
-      <shortenClasspath name="NONE" />
-      <useClassPathOnly />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="api.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="SUITE_NAME" value="" />
-      <option name="PACKAGE_NAME" value="api.tests" />
-      <option name="MAIN_CLASS_NAME" value="api.tests.CRUDAdminAdminUserBodyAPITest" />
-      <option name="GROUP_NAME" value="" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="PARAMETERS" value="" />
-      <option name="OUTPUT_DIRECTORY" value="" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <option name="PROPERTIES_FILE" value="" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="NewAdminUserBodyLoginTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="automation" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="web.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="web.tests" />
-      <option name="MAIN_CLASS_NAME" value="web.tests.NewAdminUserBodyLoginTest" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="TestNG.NewAdminUserBodyLoginTest" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

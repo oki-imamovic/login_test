@@ -1,0 +1,14 @@
+TITLE: Testing services for CRUD operation on Contact list
+
+DESCRIPTION:
+Testing back end services for CRUD operation on contacts list
+
+TEST STEPS:
+GIVEN I create new user and log in into the app
+AND I create 2 new contacts for the user
+THEN I validate GET response's with the data I inputted on creation
+AND I patch the contact in the table
+AND I validate that it has been updated on get endpoint
+AND I update one contact with put endpoint
+THEN I delete the contact and validate that it is no longer present in the list
+AND I delete the new user after log out

@@ -1,9 +1,6 @@
 package api.controller
 
-import api.dataobject.AdminUserBody
-import api.dataobject.CreateAdminUserResponse
-import api.dataobject.LogInUserRequest
-import api.dataobject.AdminUserRequest
+import api.dataobject.*
 import com.fasterxml.jackson.databind.ObjectMapper
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
@@ -18,11 +15,11 @@ class ContactUserList {
     private val client = OkHttpClient()
     private val objectMapper = ObjectMapper()
 
-    fun createUser(firstName: String, lastName: String,  email: String, password: String, token: String): CreateAdminUserResponse? {
-        val url = "$baseUrl/users"
+    fun addContact(firstName: String, lastName: String, birthdate: String, email: String, phone: String, street1: String, street2: String, city: String, stateProvince: String, postalCode: String, country: String, token: String): ContactsUserBody? {
+        val url = "$baseUrl/contacts"
         val jsonMediaType = "application/json".toMediaType()
 
-        val requestBodyJson = objectMapper.writeValueAsString(AdminUserRequest(firstName = firstName, lastName = lastName, email = email, password = password))
+        val requestBodyJson = objectMapper.writeValueAsString(ContactsUserBody(firstName = firstName, lastName = lastName, birthdate = birthdate, email = email, phone = phone, street1 = street1, street2 = street2, city = city, stateProvince = stateProvince, postalCode = postalCode, country = country))
         val requestBody = requestBodyJson.toRequestBody(jsonMediaType)
 
         val request = Request.Builder()
@@ -35,7 +32,7 @@ class ContactUserList {
         client.newCall(request).execute().use { response ->
             return if (response.isSuccessful) {
                 response.body!!.string().let { responseBody ->
-                    objectMapper.readValue(responseBody, CreateAdminUserResponse::class.java)
+                    objectMapper.readValue(responseBody, ContactsUserBody::class.java)
                 }
             } else {
                 println("Failed to create user: ${response.code} - ${response.body!!.string()}")
@@ -44,9 +41,9 @@ class ContactUserList {
         }
     }
 
-    fun getCurrentUser(token: String): AdminUserBody? {
+    fun getContactUser(token: String, id: String): ContactsUserBody? {
         val request = Request.Builder()
-            .url("$baseUrl/users/me")
+            .url("$baseUrl/contacts/$id")
             .addHeader("Authorization", token)
             .get()
             .build()
@@ -56,16 +53,20 @@ class ContactUserList {
                 throw RuntimeException("Unexpected code $response")
             }
             return response.body!!.string().let { responseBody ->
-                objectMapper.readValue(responseBody, AdminUserBody::class.java)
+                objectMapper.readValue(responseBody, ContactsUserBody::class.java)
             }
         }
     }
 
-    fun updateUser(firstName: String, lastName: String, email: String, password: String, token: String): AdminUserBody? {
-        val url = "$baseUrl/users/me"
+    fun patchContact(firstName: String, lastName: String, token: String, id: String): ContactsUserBody? {
+        val url = "$baseUrl/contacts/$id"
         val jsonMediaType = "application/json".toMediaType()
 
-        val requestBodyJson = objectMapper.writeValueAsString(AdminUserRequest(firstName = firstName, lastName = lastName, email = email, password = password))
+        val updateFields = mapOf(
+            "firstName" to firstName,
+            "lastName" to lastName
+        )
+        val requestBodyJson = objectMapper.writeValueAsString(updateFields)
         val requestBody = requestBodyJson.toRequestBody(jsonMediaType)
 
         val request = Request.Builder()
@@ -78,7 +79,33 @@ class ContactUserList {
         client.newCall(request).execute().use { response ->
             return if (response.isSuccessful) {
                 response.body!!.string().let { responseBody ->
-                    objectMapper.readValue(responseBody, AdminUserBody::class.java)
+                    objectMapper.readValue(responseBody, ContactsUserBody::class.java)
+                }
+            } else {
+                println("Failed to patch contact: ${response.code} - ${response.body!!.string()}")
+                null
+            }
+        }
+    }
+
+    fun updateContact(firstName: String, lastName: String, birthdate: String, email: String, phone: String, street1: String, street2: String, city: String, stateProvince: String, postalCode: String, country: String, id: String, token: String): ContactsUserBody? {
+        val url = "$baseUrl/contacts/$id"
+        val jsonMediaType = "application/json".toMediaType()
+
+        val requestBodyJson = objectMapper.writeValueAsString(ContactsUserBody(firstName = firstName, lastName = lastName, birthdate = birthdate, email = email, phone = phone, street1 = street1, street2 = street2, city = city, stateProvince = stateProvince, postalCode = postalCode, country = country))
+        val requestBody = requestBodyJson.toRequestBody(jsonMediaType)
+
+        val request = Request.Builder()
+            .url(url)
+            .header("Authorization", token)
+            .header("Content-Type", "application/json")
+            .put(requestBody)
+            .build()
+
+        client.newCall(request).execute().use { response ->
+            return if (response.isSuccessful) {
+                response.body!!.string().let { responseBody ->
+                    objectMapper.readValue(responseBody, ContactsUserBody::class.java)
                 }
             } else {
                 println("Failed to update user: ${response.code} - ${response.body!!.string()}")
@@ -87,50 +114,9 @@ class ContactUserList {
         }
     }
 
-    fun logInUser(email: String, password: String, token: String): CreateAdminUserResponse? {
-        val url = "$baseUrl/users/login"
-        val jsonMediaType = "application/json".toMediaType()
-
-        val requestBodyJson = objectMapper.writeValueAsString(LogInUserRequest(email = email, password = password))
-        val requestBody = requestBodyJson.toRequestBody(jsonMediaType)
-
+    fun deleteContactUser(token: String, id: String): String {
         val request = Request.Builder()
-            .url(url)
-            .header("Authorization", token)
-            .header("Content-Type", "application/json")
-            .post(requestBody)
-            .build()
-
-        client.newCall(request).execute().use { response ->
-            return if (response.isSuccessful) {
-                response.body!!.string().let { responseBody ->
-                    objectMapper.readValue(responseBody, CreateAdminUserResponse::class.java)
-                }
-            } else {
-                println("Failed to create user: ${response.code} - ${response.body!!.string()}")
-                null
-            }
-        }
-    }
-
-    fun logOutUser(token: String): String {
-        val request = Request.Builder()
-            .url("$baseUrl/users/logout")
-            .addHeader("Authorization", token)
-            .post("".toRequestBody())
-            .build()
-
-        client.newCall(request).execute().use { response ->
-            if (!response.isSuccessful) {
-                throw RuntimeException("Unexpected code $response")
-            }
-            return response.code.toString()
-        }
-    }
-
-    fun deleteAdminUser(token: String): String {
-        val request = Request.Builder()
-            .url("$baseUrl/users/me")
+            .url("$baseUrl/contacts/$id")
             .addHeader("Authorization", token)
             .delete()
             .build()
@@ -139,7 +125,7 @@ class ContactUserList {
             if (!response.isSuccessful) {
                 throw RuntimeException("Unexpected code $response")
             }
-            return response.code.toString()
+            return response.body!!.string()
         }
     }
 }
